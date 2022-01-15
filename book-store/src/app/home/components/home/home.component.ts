@@ -25,8 +25,7 @@ export class HomeComponent implements OnInit {
     let book2 = new BookModel();
     book2.id = 2;
     book2.author = 'Aurélien Géron';
-    book2.name = 'Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition';
-    book2.price = 20;
+    book2.name = 'Hands-On Machine Learning';
     book2.imgSrc =
       'https://learning.oreilly.com/library/cover/9781492032632/250w/';
     this.books.push(book2);
