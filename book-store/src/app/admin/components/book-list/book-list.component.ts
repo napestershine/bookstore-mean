@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BookModel } from 'src/app/book/models/book.model';
 import { BookService } from 'src/app/book/services/book.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css']
 })
-export class HomeComponent implements OnInit {
-  constructor(private bookService: BookService) {}
+export class BookListComponent implements OnInit {
 
-  books: BookModel[];
+  @Input() books: BookModel[];
+
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.books = [];
@@ -28,4 +29,5 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
 }

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { AdminModule } from './admin/admin.module';
+import { BookFormComponent } from './admin/components/book-form/book-form.component';
+import { BookListComponent } from './admin/components/book-list/book-list.component';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -15,6 +18,8 @@ const routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'admin/book/add', component: BookFormComponent },
+  { path: 'admin/book/list', component: BookListComponent },
 ];
 
 // step 2- make module aware (import) of these paths
@@ -27,9 +32,10 @@ const routes = [
     BrowserModule,
     AuthModule,
     HomeModule,
+    SharedModule,
+    AdminModule,
     // make module aware of route paths
     RouterModule.forRoot(routes),
-    SharedModule,
   ],
   providers: [],
   // Entry point for module
